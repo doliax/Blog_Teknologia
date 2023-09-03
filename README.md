@@ -1,2 +1,2 @@
 # Blog_Teknologia
-Blog sobre tecnología hecho con Ionic Angular
+Blog sobre tecnología hecho con Ionic Angular / NestJS / MongoDB
