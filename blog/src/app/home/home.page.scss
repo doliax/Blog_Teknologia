@@ -1,14 +1,16 @@
+/*Para centrar los cards*/
 #container {
   padding-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 ion-card {
   width: 300px;
-  height: 200px;
+  height: 400px;
 }
 
 ion-card-title, ion-card-subtitle{
@@ -22,4 +24,9 @@ ion-title{
 a{
   display: inline-block;
   margin-top: 10px;
+}
+
+.img_bd{
+  height: 150px;
+  margin: 0 auto;
 }
