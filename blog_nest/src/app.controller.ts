@@ -27,7 +27,7 @@ export class AppController {
       return post;
   }
 
-  @Put('posts/:id')
+  @Put('posts/:id')     //En este caso param es lo que ponemos en la ruta y body lo que ponemos en el raw json
   async updatePostById(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto, @Res() res): Promise<Posts> {
     //Utilizo el metodo del service
     const post = await this.appService.updatePostById(id, updatePostDto);

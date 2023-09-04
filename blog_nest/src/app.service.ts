@@ -46,7 +46,6 @@ export class AppService {
     //Utilizo el método findByIdAndUpdate para pasarle el id que quiero y los datos que voy a actualizar (dto)
     const updatedPost = await this.postsModel.findByIdAndUpdate(filter, update);
 
-
     return updatedPost;
   }
 
