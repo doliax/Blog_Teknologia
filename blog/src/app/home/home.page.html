@@ -42,7 +42,7 @@
     <strong class="ub">Ultimos Blogs</strong>
     <ion-card *ngFor="let post of posts">
       <ion-card-header>
-        <ion-card-title>{{post._id}}</ion-card-title>
+        <ion-card-title>{{post.titulo}}</ion-card-title>
         <ion-card-subtitle>{{post.subtitulo}}</ion-card-subtitle>
       </ion-card-header>
       <img class="img_bd" (click)="onCardClick(post._id)" src={{post.imagen}} alt="">
