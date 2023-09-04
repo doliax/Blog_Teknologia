@@ -1,5 +1,7 @@
 export class Posts {
    
+    _id!: string;
+
     titulo!: string;
 
     subtitulo!: string;

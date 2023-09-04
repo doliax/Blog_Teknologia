@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">post</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <h1>Test</h1>
+  <div *ngIf="post">
+    <h2>{{ post.titulo }}</h2>
+    <p>{{ post.subtitulo }}</p>
+  </div>
+</ion-content>

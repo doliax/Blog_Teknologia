@@ -28,6 +28,10 @@ let AppService = class AppService {
         const posts = await this.postsModel.find().exec();
         return posts;
     }
+    async getPostById(id) {
+        const post = await this.postsModel.findOne({ _id: id });
+        return post;
+    }
 };
 exports.AppService = AppService;
 exports.AppService = AppService = __decorate([

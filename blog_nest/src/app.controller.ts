@@ -1,6 +1,6 @@
 
 
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Posts } from './posts/posts'; // Importa el modelo correcto
 
@@ -17,4 +17,14 @@ export class AppController {
   async getPosts(): Promise<Posts[]> {
     return this.appService.getPosts();
   }
+
+  @Get('posts/:id') //Ruta para obtener un post por su id
+  async getPostById(@Param('id') id: string): Promise<Posts> {
+   
+      const post = await this.appService.getPostById(id);
+      return post;
+   
+
+  }
+
 }

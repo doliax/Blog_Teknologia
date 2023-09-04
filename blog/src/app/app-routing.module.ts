@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'sobre-nosotros',
     loadChildren: () => import('./pages/sobre-nosotros/sobre-nosotros.module').then( m => m.SobreNosotrosPageModule)
   },
+  {
+    path: 'post/:_id',
+    loadChildren: () => import('./pages/post/post.module').then( m => m.PostPageModule)
+  },
 ];
 
 @NgModule({

@@ -5,4 +5,5 @@ export declare class AppController {
     constructor(appService: AppService);
     getHello(): string;
     getPosts(): Promise<Posts[]>;
+    getPostById(id: string): Promise<Posts>;
 }
