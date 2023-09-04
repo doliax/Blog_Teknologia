@@ -16,7 +16,7 @@ export class PostPage implements OnInit {
   ) {}
 
   ngOnInit() {
-     // Recupera el ID del post de la ruta
+     //Una vez haya navegado al post y en la url este el id recupera el id.
      const postId = this.route.snapshot.paramMap.get('_id');
 
      //Hacer el comprobante para que me lo pille

@@ -25,6 +25,7 @@ export class AppService {
   
 //Una función asincroma que esta todo el rato escuchando, le pasamos una promesa de tipo post, espera hasta tenerla y luego la devuelve
   async getPostById(id: string): Promise<Posts> {
+    //Esta es igual de valida
     //const post = await this.postsModel.findById(id).exec();
     const post = await this.postsModel.findOne({_id: id});
     return post;

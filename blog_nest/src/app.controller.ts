@@ -18,6 +18,7 @@ export class AppController {
     return this.appService.getPosts();
   }
 
+  //En este get le pasamos el id
   @Get('posts/:id') //Ruta para obtener un post por su id
   async getPostById(@Param('id') id: string): Promise<Posts> {
    
