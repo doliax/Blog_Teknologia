@@ -32,6 +32,22 @@ let AppService = class AppService {
         const post = await this.postsModel.findOne({ _id: id });
         return post;
     }
+    async updatePostById(id, updatePostDto) {
+        const filter = { _id: id };
+        const update = {
+            titulo: updatePostDto.titulo,
+            subtitulo: updatePostDto.subtitulo,
+            texto: updatePostDto.texto,
+            imagen: updatePostDto.imagen,
+        };
+        const updatedPost = await this.postsModel.findByIdAndUpdate(filter, update);
+        return updatedPost;
+    }
+    async deletePostById(id) {
+        const filter = { _id: id };
+        const updatedPost = await this.postsModel.findByIdAndDelete(filter);
+        return updatedPost;
+    }
 };
 exports.AppService = AppService;
 exports.AppService = AppService = __decorate([

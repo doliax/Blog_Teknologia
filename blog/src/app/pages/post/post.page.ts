@@ -19,7 +19,7 @@ export class PostPage implements OnInit {
      //Una vez haya navegado al post y en la url este el id recupera el id.
      const postId = this.route.snapshot.paramMap.get('_id');
 
-     //Hacer el comprobante para que me lo pille
+     //Hacer el comprobante para que me funcione
      if (postId !== null) {
       console.log(`Estoy dentro de la pagina individual con el id ${postId}`);
        //Servicio para obtener los datos del post

@@ -1,8 +1,9 @@
 
 
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Put, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Posts } from './posts/posts'; // Importa el modelo correcto
+import { UpdatePostDto } from './dtos/update-post-dto/update-post-dto';
 
 @Controller()
 export class AppController {
@@ -24,7 +25,30 @@ export class AppController {
    
       const post = await this.appService.getPostById(id);
       return post;
-   
+  }
+
+  @Put('posts/:id')
+  async updatePostById(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto, @Res() res): Promise<Posts> {
+    //Utilizo el metodo del service
+    const post = await this.appService.updatePostById(id, updatePostDto);
+
+    if(post){
+      res.status(200).json({ message: 'El post se actualizó exitosamente' });
+    }
+
+    return post;
+  }
+
+  //Este funciona
+  @Delete('posts/:id')                          //Le podemos pasar el res para si logra hacer la acción de borrar nos salga un aviso de exito
+  async deletePostById(@Param('id') id: string, @Res() res): Promise<Posts> {
+    //Utilizo el metodo del service
+    const post = await this.appService.deletePostById(id);
+    
+    if(post){
+      res.status(200).json({ message: 'El post se borró exitosamente' });
+    }
+    return post;
 
   }
 

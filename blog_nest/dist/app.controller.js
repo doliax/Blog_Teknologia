@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
+const update_post_dto_1 = require("./dtos/update-post-dto/update-post-dto");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
@@ -27,6 +28,20 @@ let AppController = class AppController {
     }
     async getPostById(id) {
         const post = await this.appService.getPostById(id);
+        return post;
+    }
+    async updatePostById(id, updatePostDto, res) {
+        const post = await this.appService.updatePostById(id, updatePostDto);
+        if (post) {
+            res.status(200).json({ message: 'El post se actualizó exitosamente' });
+        }
+        return post;
+    }
+    async deletePostById(id, res) {
+        const post = await this.appService.deletePostById(id);
+        if (post) {
+            res.status(200).json({ message: 'El post se borró exitosamente' });
+        }
         return post;
     }
 };
@@ -50,6 +65,23 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getPostById", null);
+__decorate([
+    (0, common_1.Put)('posts/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __param(2, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, update_post_dto_1.UpdatePostDto, Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "updatePostById", null);
+__decorate([
+    (0, common_1.Delete)('posts/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "deletePostById", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

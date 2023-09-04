@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose'; // Importa InjectModel
 import { Model } from 'mongoose'; // Importa el tipo Model
 import { Posts } from './posts/posts';
+import { UpdatePostDto } from './dtos/update-post-dto/update-post-dto';
 
 
 
@@ -30,5 +31,34 @@ export class AppService {
     const post = await this.postsModel.findOne({_id: id});
     return post;
   }
-}
 
+  async updatePostById(id: string, updatePostDto: UpdatePostDto): Promise<Posts> {
+    //Cargamos los datos que vamos a utilizar desde el dto
+    const filter = { _id: id };
+    //Estos las claves de este objeto tienen que estar escritas conforme la clase
+    const update = {
+      titulo: updatePostDto.titulo,
+      subtitulo: updatePostDto.subtitulo,
+      texto: updatePostDto.texto,
+      imagen: updatePostDto.imagen,
+    };
+
+    //Utilizo el método findByIdAndUpdate para pasarle el id que quiero y los datos que voy a actualizar (dto)
+    const updatedPost = await this.postsModel.findByIdAndUpdate(filter, update);
+
+
+    return updatedPost;
+  }
+
+  async deletePostById(id: string): Promise<Posts> {
+    //Cargamos los datos que vamos a utilizar desde el dto
+    const filter = { _id: id };
+   
+
+    //Utilizo el método findByIdAndUpdate para pasarle el id que quiero y los datos que voy a actualizar (dto)
+    const updatedPost = await this.postsModel.findByIdAndDelete(filter);
+
+
+    return updatedPost;
+  }
+}
