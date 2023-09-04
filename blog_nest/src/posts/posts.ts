@@ -17,5 +17,6 @@ export class Posts {
     imagen: string;
 }
 
-//Esto es nuestro schema real. Creamos una variable que sera el schemafactory de nuestra clase | Esto se lo pasamos al import en app.module
-export const PostSchema = SchemaFactory.createForClass(Posts)
+//Esto es nuestro schema real. Creamos una variable que sera el schema de nuestra clase | Esto se lo pasamos al import en app.module
+//Lo que hace es convertir a schema una clase
+export const PostSchema = SchemaFactory.createForClass(Posts);

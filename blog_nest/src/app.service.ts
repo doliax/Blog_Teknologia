@@ -7,7 +7,12 @@ import { Posts } from './posts/posts';
 
 @Injectable()
 export class AppService {
-  constructor(@InjectModel(Posts.name) private readonly postsModel: Model<Posts>) {}
+  //En el constructor añadimos un decorador injectModel de post.name al postsModel
+  constructor(
+      @InjectModel(Posts.name) 
+                                  //Este Model con el generic Type de Posts viene de mongoose
+      private readonly postsModel: Model<Posts>
+    ) {}
 
   getHello(): string {
     return 'Hello World!';
