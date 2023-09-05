@@ -32,6 +32,11 @@ let AppService = class AppService {
         const post = await this.postsModel.findOne({ _id: id });
         return post;
     }
+    async getPostByCategoria(categoria) {
+        console.log(`Valor de categoria: ${categoria}`);
+        const post = await this.postsModel.findOne({ categoria: categoria });
+        return post;
+    }
     async updatePostById(id, updatePostDto) {
         const filter = { _id: id };
         const update = {
@@ -39,6 +44,8 @@ let AppService = class AppService {
             subtitulo: updatePostDto.subtitulo,
             texto: updatePostDto.texto,
             imagen: updatePostDto.imagen,
+            isNew: updatePostDto.isNew,
+            categoria: updatePostDto.categoria
         };
         const updatedPost = await this.postsModel.findByIdAndUpdate(filter, update);
         return updatedPost;

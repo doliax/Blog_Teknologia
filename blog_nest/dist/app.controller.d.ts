@@ -7,6 +7,7 @@ export declare class AppController {
     getHello(): string;
     getPosts(): Promise<Posts[]>;
     getPostById(id: string): Promise<Posts>;
+    getPostByCategoria(categoria: string): Promise<Posts>;
     updatePostById(id: string, updatePostDto: UpdatePostDto, res: any): Promise<Posts>;
     deletePostById(id: string, res: any): Promise<Posts>;
 }

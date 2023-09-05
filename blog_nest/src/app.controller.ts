@@ -27,6 +27,15 @@ export class AppController {
       return post;
   }
 
+
+  @Get('posts/:categoria') //Ruta para obtener un post por su categoria
+  async getPostByCategoria(@Param('categoria') categoria: string): Promise<Posts> {
+    console.log(`Valor de categoria: ${categoria}`);
+      const post = await this.appService.getPostByCategoria(categoria);
+      return post;
+  }
+
+
   @Put('posts/:id')     //En este caso param es lo que ponemos en la ruta y body lo que ponemos en el raw json
   async updatePostById(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto, @Res() res): Promise<Posts> {
     //Utilizo el metodo del service

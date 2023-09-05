@@ -1,0 +1,46 @@
+/*Para centrar los cards*/
+#container {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  ion-card {
+    width: 300px;
+    height: 400px;
+  }
+  
+  ion-card-title, ion-card-subtitle{
+    margin: 0 auto;
+  }
+  
+  ion-title{
+    margin: 0 auto;
+  }
+  
+  a{
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .img_bd{
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+  }
+  
+  .ub{
+    padding-bottom: 50px;
+  }
+  
+  .ion-card{
+    border-radius:30px !important;
+  }
+  
+  .posts {
+    width: 250px;
+    height: 270px;
+  }

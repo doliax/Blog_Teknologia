@@ -7,6 +7,7 @@ export declare class AppService {
     getHello(): string;
     getPosts(): Promise<Posts[]>;
     getPostById(id: string): Promise<Posts>;
+    getPostByCategoria(categoria: string): Promise<Posts>;
     updatePostById(id: string, updatePostDto: UpdatePostDto): Promise<Posts>;
     deletePostById(id: string): Promise<Posts>;
 }

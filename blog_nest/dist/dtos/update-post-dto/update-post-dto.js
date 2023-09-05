@@ -34,4 +34,12 @@ __decorate([
     (0, decorators_1.ApiProperty)(),
     __metadata("design:type", String)
 ], UpdatePostDto.prototype, "creador", void 0);
+__decorate([
+    (0, decorators_1.ApiProperty)(),
+    __metadata("design:type", Boolean)
+], UpdatePostDto.prototype, "isNew", void 0);
+__decorate([
+    (0, decorators_1.ApiProperty)(),
+    __metadata("design:type", String)
+], UpdatePostDto.prototype, "categoria", void 0);
 //# sourceMappingURL=update-post-dto.js.map

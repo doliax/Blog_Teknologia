@@ -18,6 +18,12 @@ export class Posts {
 
     @Prop()
     creador: string;
+
+    @Prop()
+    isNew: false;
+
+    @Prop()
+    categoria: string;
 }
 
 //Esto es nuestro schema real. Creamos una variable que sera el schema de nuestra clase | Esto se lo pasamos al import en app.module

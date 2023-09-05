@@ -11,4 +11,8 @@ export class Posts {
     imagen!: string;
 
     creador!: string
+
+    isNew!: false;
+
+    categoria!: string;
 }

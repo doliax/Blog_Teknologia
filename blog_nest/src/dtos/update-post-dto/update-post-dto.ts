@@ -13,4 +13,8 @@ export class UpdatePostDto {
     imagen: string;
     @ApiProperty()
     creador: string;
+    @ApiProperty()
+    isNew: false;
+    @ApiProperty()
+    categoria: string;
   }

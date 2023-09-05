@@ -4,4 +4,6 @@ export declare class UpdatePostDto {
     texto: string;
     imagen: string;
     creador: string;
+    isNew: false;
+    categoria: string;
 }

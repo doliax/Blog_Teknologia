@@ -32,6 +32,14 @@ export class AppService {
     return post;
   }
 
+  /*TODO Esto falla, REVISAR */
+  //Función GET CATEGORIA
+  async getPostByCategoria(categoria: string): Promise<Posts> {
+    console.log(`Valor de categoria: ${categoria}`);
+    const post = await this.postsModel.findOne({ categoria: categoria });
+    return post;
+}
+
   async updatePostById(id: string, updatePostDto: UpdatePostDto): Promise<Posts> {
     //Cargamos los datos que vamos a utilizar desde el dto
     const filter = { _id: id };
@@ -41,6 +49,8 @@ export class AppService {
       subtitulo: updatePostDto.subtitulo,
       texto: updatePostDto.texto,
       imagen: updatePostDto.imagen,
+      isNew: updatePostDto.isNew,
+      categoria: updatePostDto.categoria
     };
 
     //Utilizo el método findByIdAndUpdate para pasarle el id que quiero y los datos que voy a actualizar (dto)
