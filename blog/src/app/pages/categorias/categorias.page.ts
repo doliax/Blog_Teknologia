@@ -31,6 +31,14 @@ export class CategoriasPage implements OnInit {
     });
   }
 
+  getDataHardware() {
+    const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/categoria/hardware');
+    posts.subscribe(response => {
+      this.posts = response;
+      console.log(this.posts);
+    });
+  }
+
  /* data = {};
   getData() { 
     const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/categoria/graficas');

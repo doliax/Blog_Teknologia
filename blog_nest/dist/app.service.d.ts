@@ -8,7 +8,6 @@ export declare class AppService {
     getPosts(): Promise<Posts[]>;
     getPostById(id: string): Promise<Posts>;
     getPostsByCategoria(categoria: string): Promise<Posts[]>;
-    getPostByCategoria(categoria: string): Promise<Posts[]>;
     getPostByTitulo(titulo: string): Promise<Posts>;
     updatePostById(id: string, updatePostDto: UpdatePostDto): Promise<Posts>;
     deletePostById(id: string): Promise<Posts>;

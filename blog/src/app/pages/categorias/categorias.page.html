@@ -6,6 +6,7 @@
     <strong class="ub">Categorias</strong>
     <!--TODO botones que al clickar cambien de categoria-->
     <ion-button id="cat_graf" (click)="getData()">Categoria Graficas</ion-button>
+    <ion-button id="cat_hardware" (click)="getDataHardware()">Categoria Hardware</ion-button>
     <ion-card class="posts" *ngFor="let post of posts">
       <ion-card-header>
         <ion-card-title>{{post.titulo}}</ion-card-title>
