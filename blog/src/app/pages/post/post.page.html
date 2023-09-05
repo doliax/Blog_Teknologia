@@ -9,9 +9,7 @@
     <!--<div class="titulo">-->
     <div>
                   <!--El shape round jace que el boton este con los bordes circulares | fill clear quita el background-->
-      <ion-button  shape="round" fill="clear" (click)="goForward()">
-        <ion-icon name="caret-back"></ion-icon>
-        Atras</ion-button>
+                  <app-back-button></app-back-button>
       <h1>{{ post.titulo }}</h1>
       <h3> Creado por: {{post.creador}}</h3>
     </div>

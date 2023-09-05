@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { PostPageRoutingModule } from './post-routing.module';
 
 import { PostPage } from './post.page';
+import { BackButtonComponent } from 'src/app/reutilizables/back-button/back-button.component';
+import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.module';
 
 
 @NgModule({
@@ -15,7 +17,10 @@ import { PostPage } from './post.page';
     FormsModule,
     IonicModule,
     PostPageRoutingModule,
+    BackButtonModule
+    
   ],
-  declarations: [PostPage]
+  declarations: [PostPage],
+  exports: []
 })
 export class PostPageModule {}
