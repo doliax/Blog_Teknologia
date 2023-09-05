@@ -8,7 +8,10 @@
   <div class="post" *ngIf="post">
     <!--<div class="titulo">-->
     <div>
-      <ion-button (click)="goForward()">Atras</ion-button>
+                  <!--El shape round jace que el boton este con los bordes circulares | fill clear quita el background-->
+      <ion-button  shape="round" fill="clear" (click)="goForward()">
+        <ion-icon name="caret-back"></ion-icon>
+        Atras</ion-button>
       <h1>   {{ post.titulo }}</h1>
     </div>
     <img src={{post.imagen}} alt="">
