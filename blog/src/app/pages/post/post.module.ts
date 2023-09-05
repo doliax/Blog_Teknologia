@@ -9,6 +9,7 @@ import { PostPageRoutingModule } from './post-routing.module';
 import { PostPage } from './post.page';
 import { BackButtonComponent } from 'src/app/reutilizables/back-button/back-button.component';
 import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.module';
+import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.
     FormsModule,
     IonicModule,
     PostPageRoutingModule,
-    BackButtonModule
+    BackButtonModule,
+    MenuModule
     
   ],
   declarations: [PostPage],

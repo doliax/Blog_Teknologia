@@ -9,6 +9,7 @@ import { SobreNosotrosPageRoutingModule } from './sobre-nosotros-routing.module'
 import { SobreNosotrosPage } from './sobre-nosotros.page';
 import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.module';
 import { BackButtonComponent } from 'src/app/reutilizables/back-button/back-button.component';
+import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { BackButtonComponent } from 'src/app/reutilizables/back-button/back-butt
     FormsModule,
     IonicModule,
     SobreNosotrosPageRoutingModule,
-    BackButtonModule
+    BackButtonModule,
+    MenuModule
      
   ],
   declarations: [SobreNosotrosPage]
