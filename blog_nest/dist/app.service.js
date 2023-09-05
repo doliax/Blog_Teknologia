@@ -37,6 +37,10 @@ let AppService = class AppService {
         const post = await this.postsModel.findOne({ categoria: categoria });
         return post;
     }
+    async getPostByTitulo(titulo) {
+        const post = await this.postsModel.findOne({ titulo: titulo });
+        return post;
+    }
     async updatePostById(id, updatePostDto) {
         const filter = { _id: id };
         const update = {

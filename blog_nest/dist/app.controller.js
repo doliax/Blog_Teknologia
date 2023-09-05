@@ -35,6 +35,10 @@ let AppController = class AppController {
         const post = await this.appService.getPostByCategoria(categoria);
         return post;
     }
+    async getPostByName(titulo) {
+        const post = await this.appService.getPostByTitulo(titulo);
+        return post;
+    }
     async updatePostById(id, updatePostDto, res) {
         const post = await this.appService.updatePostById(id, updatePostDto);
         if (post) {
@@ -71,12 +75,19 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getPostById", null);
 __decorate([
-    (0, common_1.Get)('posts/:categoria'),
+    (0, common_1.Get)('categoria/:categoria'),
     __param(0, (0, common_1.Param)('categoria')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getPostByCategoria", null);
+__decorate([
+    (0, common_1.Get)('titulo/:titulo'),
+    __param(0, (0, common_1.Param)('titulo')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getPostByName", null);
 __decorate([
     (0, common_1.Put)('posts/:id'),
     __param(0, (0, common_1.Param)('id')),

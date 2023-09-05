@@ -40,6 +40,12 @@ export class AppService {
     return post;
 }
 
+async getPostByTitulo(titulo: string): Promise<Posts> {
+
+  const post = await this.postsModel.findOne({ titulo: titulo });
+  return post;
+}
+
   async updatePostById(id: string, updatePostDto: UpdatePostDto): Promise<Posts> {
     //Cargamos los datos que vamos a utilizar desde el dto
     const filter = { _id: id };
