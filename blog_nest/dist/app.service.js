@@ -32,10 +32,13 @@ let AppService = class AppService {
         const post = await this.postsModel.findOne({ _id: id });
         return post;
     }
+    async getPostsByCategoria(categoria) {
+        const posts = await this.postsModel.find({ categoria: categoria });
+        return posts;
+    }
     async getPostByCategoria(categoria) {
-        console.log(`Valor de categoria: ${categoria}`);
-        const post = await this.postsModel.findOne({ categoria: categoria });
-        return post;
+        const posts = await this.postsModel.find({ categoria: categoria });
+        return posts;
     }
     async getPostByTitulo(titulo) {
         const post = await this.postsModel.findOne({ titulo: titulo });

@@ -26,20 +26,20 @@ export class AppService {
   
 //Una función asincroma que esta todo el rato escuchando, le pasamos una promesa de tipo post, espera hasta tenerla y luego la devuelve
   async getPostById(id: string): Promise<Posts> {
-    //Esta es igual de valida
-    //const post = await this.postsModel.findById(id).exec();
+    
     const post = await this.postsModel.findOne({_id: id});
     return post;
   }
 
-  /*TODO Esto falla, REVISAR */
-  //Función GET CATEGORIA
-  async getPostByCategoria(categoria: string): Promise<Posts> {
-    console.log(`Valor de categoria: ${categoria}`);
-    const post = await this.postsModel.findOne({ categoria: categoria });
-    return post;
+   /*TODO Esto falla, QUE DEVUELVA ARRAY */
+  // Función en el servicio
+// Función en el servicio
+async getPostsByCategoria(categoria: string): Promise<Posts[]> {
+  const posts = await this.postsModel.find({ categoria: categoria });
+  return posts;
 }
 
+ 
 async getPostByTitulo(titulo: string): Promise<Posts> {
 
   const post = await this.postsModel.findOne({ titulo: titulo });

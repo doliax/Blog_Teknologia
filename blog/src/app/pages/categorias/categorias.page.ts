@@ -16,22 +16,53 @@ export class CategoriasPage implements OnInit {
    
 
   onCardClick(postId: string) {
-  
+    
     //Navega a la página de post y pasa el ID del post como parámetro
     this.router.navigate(['/post', postId]);
    }
 
-
-  ngOnInit() {
-    const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/posts');
-    posts.subscribe((posts) => {
-      this.posts = posts;
+   /* Esto recibe el json pero no puede mostrarlo en html
+   //Estás tratando de iterar sobre un objeto JSON con ngFor, pero ngFor solo funciona con iterables, como arrays. */
+   getData() {
+    const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/categoria/graficas');
+    posts.subscribe(response => {
+      this.posts = response;
+      console.log(this.posts);
     });
+  }
 
-    let cat_graf = document.getElementById('cat_graf');
+ /* data = {};
+  getData() { 
+    const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/categoria/graficas');
+   posts.subscribe((posts) => {
+     this.data = posts;
+     console.log(this.data)
+   });
+  console.log(this.data);
+ }*/
+  
+
+  
+
+  
+ 
+  
+  
+  
+  ngOnInit() {
+
+     
+    /*let cat_graf = document.getElementById('cat_graf');
     cat_graf?.addEventListener('click', () =>{
-        
-    })
+      const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/categoria/graficas');
+      posts.subscribe((posts) => {
+        this.posts = posts;
+        console.log(posts);
+      });
+    })*/
+    
+    
+
   }
  
   posts!: Posts[];
