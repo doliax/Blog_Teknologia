@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostServiceService } from 'src/app/services/post-service.service';
 
 @Component({
@@ -12,8 +12,14 @@ export class PostPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private postService: PostServiceService
+    private postService: PostServiceService,
+    private router: Router
   ) {}
+
+  //Función para que el boton vaya atras
+   goForward(){
+    this.router.navigate(['/home']);
+   }
 
   ngOnInit() {
      //Una vez haya navegado al post y en la url este el id recupera el id.
@@ -32,5 +38,10 @@ export class PostPage implements OnInit {
        //Si es null
        console.error('El ID del post es nulo.');
      }
+
+    
+     
    }
+
+ 
 }

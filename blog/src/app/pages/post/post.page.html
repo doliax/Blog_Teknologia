@@ -1,15 +1,16 @@
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-buttons slot="start">
-      <ion-back-button>Volver</ion-back-button>
-   </ion-buttons>
+  <ion-header  collapse="condense">
     <ion-toolbar>
       <ion-title size="large">post</ion-title>
     </ion-toolbar>
   </ion-header>
   <div class="post" *ngIf="post">
-    <h1>{{ post.titulo }}</h1>
+    <!--<div class="titulo">-->
+    <div>
+      <ion-button (click)="goForward()">Atras</ion-button>
+      <h1>   {{ post.titulo }}</h1>
+    </div>
     <img src={{post.imagen}} alt="">
     <h2>{{ post.subtitulo }}</h2>
     <p>{{post.texto}}</p>
