@@ -15,6 +15,9 @@ export class Posts {
 
     @Prop()
     imagen: string;
+
+    @Prop()
+    creador: string;
 }
 
 //Esto es nuestro schema real. Creamos una variable que sera el schema de nuestra clase | Esto se lo pasamos al import en app.module

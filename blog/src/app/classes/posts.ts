@@ -10,4 +10,5 @@ export class Posts {
 
     imagen!: string;
 
+    creador!: string
 }

@@ -3,4 +3,5 @@ export declare class UpdatePostDto {
     subtitulo: string;
     texto: string;
     imagen: string;
+    creador: string;
 }

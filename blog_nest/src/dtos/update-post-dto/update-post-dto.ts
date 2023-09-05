@@ -11,4 +11,6 @@ export class UpdatePostDto {
     texto: string;
     @ApiProperty()
     imagen: string;
+    @ApiProperty()
+    creador: string;
   }

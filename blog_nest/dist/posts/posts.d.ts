@@ -28,6 +28,7 @@ export declare class Posts {
     subtitulo: string;
     texto: string;
     imagen: string;
+    creador: string;
 }
 export declare const PostSchema: import("mongoose").Schema<Posts, import("mongoose").Model<Posts, any, any, any, import("mongoose").Document<unknown, any, Posts> & Posts & {
     _id: import("mongoose").Types.ObjectId;

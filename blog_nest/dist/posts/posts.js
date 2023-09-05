@@ -30,6 +30,10 @@ __decorate([
     (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], Posts.prototype, "imagen", void 0);
+__decorate([
+    (0, mongoose_1.Prop)(),
+    __metadata("design:type", String)
+], Posts.prototype, "creador", void 0);
 exports.Posts = Posts = __decorate([
     (0, mongoose_1.Schema)()
 ], Posts);
