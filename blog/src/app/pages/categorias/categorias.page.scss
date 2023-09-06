@@ -44,3 +44,22 @@
     width: 250px;
     height: 270px;
   }
+
+  .buttons_categoria{
+    display: inline;
+  }
+
+  .buttons_categoria ion-button {
+    margin: 0 10px;
+
+  }
+
+  .buttons_categoria #cat_hardware{
+    color: greenyellow;
+  }
+
+  ion-buttons:hover {
+    transition: ease-in-out;
+  }
+
+
