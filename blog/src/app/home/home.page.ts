@@ -21,6 +21,7 @@ export class HomePage {
  }
 
  ngOnInit() {
+  //Mostramos los ultimos blogs (los que su estado es true)
   const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/estado/true');
    //const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/posts?isNew=true');
    posts.subscribe((posts) => {

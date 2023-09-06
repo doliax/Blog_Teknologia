@@ -1,12 +1,12 @@
 <app-menu></app-menu>
 
 <ion-content [fullscreen]="true">
- 
+  <app-back-button ></app-back-button>
   <div class="post" *ngIf="post">
     <!--<div class="titulo">-->
     <div>
                   <!--El shape round hace que el boton este con los bordes circulares | fill clear quita el background-->
-                  <app-back-button></app-back-button>
+                 
       <h1>{{ post.titulo }}</h1>
       <h3> Creado por: {{post.creador}}</h3>
     </div>

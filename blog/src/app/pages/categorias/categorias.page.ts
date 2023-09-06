@@ -39,38 +39,8 @@ export class CategoriasPage implements OnInit {
     });
   }
 
- /* data = {};
-  getData() { 
-    const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/categoria/graficas');
-   posts.subscribe((posts) => {
-     this.data = posts;
-     console.log(this.data)
-   });
-  console.log(this.data);
- }*/
-  
 
-  
-
-  
- 
-  
-  
-  
   ngOnInit() {
-
-     
-    /*let cat_graf = document.getElementById('cat_graf');
-    cat_graf?.addEventListener('click', () =>{
-      const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/categoria/graficas');
-      posts.subscribe((posts) => {
-        this.posts = posts;
-        console.log(posts);
-      });
-    })*/
-    
-    
-
   }
  
   posts!: Posts[];
