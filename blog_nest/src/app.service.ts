@@ -31,13 +31,17 @@ export class AppService {
     return post;
   }
 
-   /*TODO Esto falla, QUE DEVUELVA ARRAY */
-  // Función en el servicio
-// Función en el servicio
+
 async getPostsByCategoria(categoria: string): Promise<Posts[]> {
   const posts = await this.postsModel.find({ categoria: categoria });
   return posts;
 }
+
+async getPostsByNew(isNew: boolean): Promise<Posts[]> {
+  const posts = await this.postsModel.find({ isNew: isNew });
+  return posts;
+}
+
 
  
 async getPostByTitulo(titulo: string): Promise<Posts> {

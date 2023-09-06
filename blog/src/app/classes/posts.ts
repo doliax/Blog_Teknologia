@@ -15,5 +15,5 @@ export class Posts {
     isNew!: false;
 
     categoria!: string;
-  data: any;
+ 
 }

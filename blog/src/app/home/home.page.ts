@@ -21,7 +21,7 @@ export class HomePage {
  }
 
  ngOnInit() {
-  const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/posts');
+  const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/estado/true');
    //const posts = this.http.get<Posts[]>('http://127.0.0.1:3000/posts?isNew=true');
    posts.subscribe((posts) => {
      this.posts = posts;

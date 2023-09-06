@@ -34,6 +34,10 @@ let AppController = class AppController {
         const posts = await this.appService.getPostsByCategoria(categoria);
         return posts;
     }
+    async getPostsByisNew(isNew) {
+        const posts = await this.appService.getPostsByNew(isNew);
+        return posts;
+    }
     async getPostByName(titulo) {
         const post = await this.appService.getPostByTitulo(titulo);
         return post;
@@ -80,6 +84,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getPostsByCategoria", null);
+__decorate([
+    (0, common_1.Get)('estado/:isNew'),
+    __param(0, (0, common_1.Param)('isNew')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getPostsByisNew", null);
 __decorate([
     (0, common_1.Get)('titulo/:titulo'),
     __param(0, (0, common_1.Param)('titulo')),

@@ -28,10 +28,16 @@ export class AppController {
   }
 
 
- /*TODO Esto falla, QUE DEVUELVA ARRAY */
+
  @Get('categoria/:categoria') // Ruta para obtener posts por su categoría
  async getPostsByCategoria(@Param('categoria') categoria: string): Promise<Posts[]> {
    const posts = await this.appService.getPostsByCategoria(categoria);
+   return posts;
+ }
+
+ @Get('estado/:isNew') // Ruta para obtener posts por su estado de new
+ async getPostsByisNew(@Param('isNew') isNew: boolean): Promise<Posts[]> {
+   const posts = await this.appService.getPostsByNew(isNew);
    return posts;
  }
 
