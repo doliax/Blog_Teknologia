@@ -43,25 +43,49 @@
   .posts {
     width: 250px;
     height: 270px;
+    /*Creo una anumacion llamada card-enter, dura 5 milisegundos y hace un  ease-in-out*/
+    animation: card-enter 0.5s ease-in-out;
   }
 
+
+  /*Keyframe con dos etapas, en la primera esta fuera de la pantalla, a la izquierda, cuando se completa (100%) esta al centro*/
+  @keyframes card-enter {
+    0% {
+      left: -100%;
+    }
+  
+    100% {
+      left: 0;
+    }
+  }
  
-
-
-
   .buttons_categoria ion-button {
     margin-left: 0;
     padding-top: 25px;
     padding-left: 25px;
-
+    
   }
 
   .buttons_categoria #cat_hardware{
     color: greenyellow;
   }
 
-  ion-buttons:hover {
-    transition: ease-in-out;
+  .buttons_categoria #cat_graf{
+    color: blue;
+  }
+
+  
+
+  ion-button:hover {
+    animation: cambio_color 4s ease;
+  }
+
+  @keyframes cambio_color {
+    0% {color: greenyellow;}
+    25% {color: green;}
+    50% {color: yellow;}
+    75% {color: orange;}
+    100% {color: red;}
   }
 
   #categoria {

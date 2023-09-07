@@ -12,7 +12,7 @@ import { HomePageModule } from './home/home.module';
 
 
 @NgModule({
-  declarations: [AppComponent],                                     //Importamos el modulo de HttpClient para poder conectarnos al backend
+  declarations: [AppComponent, ],                                     //Importamos el modulo de HttpClient para poder conectarnos al backend
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BackButtonModule, MenuModule, HomePageModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent]

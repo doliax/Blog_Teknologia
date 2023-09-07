@@ -3,15 +3,17 @@ import { FormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
 import { NgModule } from "@angular/core";
 import { MenuComponent } from "./menu.component";
+import { LogoDirectivaDirective } from "src/app/directives/logo-directiva.directive";
 
 
 
 @NgModule({
-  declarations: [MenuComponent],
+  declarations: [MenuComponent,LogoDirectivaDirective],
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,],
+    IonicModule,
+  ],
   //Exporto mi componente, si no lo hago otros componentes no pueden detectar este!!!!
   exports: [MenuComponent]
 })
