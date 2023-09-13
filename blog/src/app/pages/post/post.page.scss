@@ -21,13 +21,14 @@ img{
     margin-right: 350px;
   }
 
-  h3{
-    /*
-    padding-top: 25px;
-    margin-left: 200px;
-    */
+  p {
+    line-height: 1.5;
+    text-align: justify;
+    margin-left: 1.5em;
+    text-indent: -1.5em;
   }
 
-  p{
-    text-align: center;
-  }
+  p::first-line {
+    text-indent: 1.5em;
+}
+  

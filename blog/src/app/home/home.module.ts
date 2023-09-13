@@ -9,13 +9,13 @@ import { MenuModule } from '../reutilizables/menu/menu.module';
 
 
 @NgModule({
+  
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
     MenuModule,
-    
   ],
   declarations: [HomePage]
 })
