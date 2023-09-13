@@ -8,6 +8,7 @@ import { LogoDirectivaDirective } from "src/app/directives/logo-directiva.direct
 
 
 @NgModule({
+                              //Importamos la directiva
   declarations: [MenuComponent,LogoDirectivaDirective],
   imports: [
     CommonModule,
