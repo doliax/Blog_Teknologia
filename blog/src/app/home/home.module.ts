@@ -6,17 +6,18 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { MenuModule } from '../reutilizables/menu/menu.module';
+import { MenuMobileModule } from "../reutilizables/menu-mobile/menu-mobile.module";
 
 
 @NgModule({
-  
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule,
-    MenuModule,
-  ],
-  declarations: [HomePage]
+    declarations: [HomePage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule,
+        MenuModule,
+        MenuMobileModule
+    ]
 })
 export class HomePageModule {}

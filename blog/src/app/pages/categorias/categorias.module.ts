@@ -9,6 +9,7 @@ import { CategoriasPageRoutingModule } from './categorias-routing.module';
 import { CategoriasPage } from './categorias.page';
 import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
 import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.module';
+import { MenuMobileModule } from 'src/app/reutilizables/menu-mobile/menu-mobile.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.
     IonicModule,
     CategoriasPageRoutingModule,
     MenuModule,
-    BackButtonModule
+    BackButtonModule,
+    MenuMobileModule
   ],
   declarations: [CategoriasPage]
 })

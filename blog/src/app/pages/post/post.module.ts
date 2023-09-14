@@ -10,6 +10,7 @@ import { PostPage } from './post.page';
 import { BackButtonComponent } from 'src/app/reutilizables/back-button/back-button.component';
 import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.module';
 import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
+import { MenuMobileModule } from 'src/app/reutilizables/menu-mobile/menu-mobile.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
     IonicModule,
     PostPageRoutingModule,
     BackButtonModule,
-    MenuModule
+    MenuModule,
+    MenuMobileModule
     
   ],
   declarations: [PostPage],

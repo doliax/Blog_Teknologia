@@ -10,6 +10,7 @@ import { SobreNosotrosPage } from './sobre-nosotros.page';
 import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.module';
 import { BackButtonComponent } from 'src/app/reutilizables/back-button/back-button.component';
 import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
+import { MenuMobileModule } from 'src/app/reutilizables/menu-mobile/menu-mobile.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
     IonicModule,
     SobreNosotrosPageRoutingModule,
     BackButtonModule,
-    MenuModule
+    MenuModule,
+    MenuMobileModule
      
   ],
   declarations: [SobreNosotrosPage]

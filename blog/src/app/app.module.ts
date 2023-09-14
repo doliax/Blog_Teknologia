@@ -9,11 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { BackButtonModule } from './reutilizables/back-button/back-button.module';
 import { MenuModule } from './reutilizables/menu/menu.module';
 import { HomePageModule } from './home/home.module';
+import { MenuMobileModule } from './reutilizables/menu-mobile/menu-mobile.module';
 
 
 @NgModule({
   declarations: [AppComponent, ],                                     //Importamos el modulo de HttpClient para poder conectarnos al backend
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BackButtonModule, MenuModule, HomePageModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BackButtonModule, MenuModule, HomePageModule, MenuMobileModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent]
 })

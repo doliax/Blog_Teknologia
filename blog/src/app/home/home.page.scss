@@ -6,7 +6,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background-color: grey;
+  /*background-color: grey;*/
 }
 
 ion-card {
@@ -36,6 +36,7 @@ a{
 .ub{
   padding-bottom: 25px;
   font-size: 50px;
+  color: white;
 }
 
 .ion-card{
@@ -46,3 +47,9 @@ a{
   width: 250px;
   height: 270px;
 }
+
+footer{
+  margin-top: 250px;
+  text-align: center;
+}
+

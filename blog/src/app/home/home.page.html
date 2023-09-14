@@ -5,7 +5,7 @@
 <ion-content [fullscreen]="true">
  
   <div id="container">
-    <strong class="ub">Ultimos Blogs</strong>
+    <h2 class="ub">Ultimos Blogs</h2>
     <ion-card class="posts" *ngFor="let post of posts">
       <ion-card-header>
         <span *ngIf="post.isNew">Novedad!</span>
@@ -14,8 +14,11 @@
       </ion-card-header>
       <img class="img_bd" (click)="onCardClick(post._id)" src={{post.imagen}} alt="">
       <ion-card-content>
-      
+        
       </ion-card-content>
     </ion-card>
   </div>
+  <app-menu-mobile></app-menu-mobile>
+  <footer>Web hecha por Doliax</footer>
+  
 </ion-content>

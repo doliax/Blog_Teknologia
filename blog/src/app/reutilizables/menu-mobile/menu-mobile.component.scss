@@ -1,0 +1,13 @@
+.menu_mobile{
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+/*Cuando llega a un minimo de 500px el menu mobile aparece*/
+@media (min-width: 500px) {
+    .menu_mobile {
+      display: none;
+    }
+  }
