@@ -4,6 +4,7 @@ import { IonicModule } from "@ionic/angular";
 import { NgModule } from "@angular/core";
 import { MenuComponent } from "./menu.component";
 import { LogoDirectivaDirective } from "src/app/directives/logo-directiva.directive";
+import { RouterLinkWithHref } from "@angular/router";
 
 
 
@@ -14,6 +15,8 @@ import { LogoDirectivaDirective } from "src/app/directives/logo-directiva.direct
     CommonModule,
     FormsModule,
     IonicModule,
+    //En la versión 7 importamos el RouterLinkHref para poder navegar
+    RouterLinkWithHref
   ],
   //Exporto mi componente, si no lo hago otros componentes no pueden detectar este!!!!
   exports: [MenuComponent]

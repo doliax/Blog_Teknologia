@@ -17,11 +17,12 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-icon name="pin-outline"></ion-icon> <a href="/"> Inicio</a> 
+     <ion-item [routerLink]="['/']"> <ion-icon name="pin-outline"></ion-icon> Inicio</ion-item> 
     <br>
-    <ion-icon name="locate-outline"></ion-icon> <a href="/categorias"> Categorias</a> 
+    <!--En la v7 hay que hacer la navegación así-->
+   <ion-item [routerLink]="['/categorias']"> <ion-icon name="locate-outline"></ion-icon> Categorias</ion-item> 
     <br>
-    <ion-icon name="people-outline"></ion-icon>  <a href="/sobre-nosotros"> Sobre Nosotros</a> 
+    <ion-item [routerLink]="['/sobre-nosotros']"><ion-icon name="people-outline"></ion-icon> Sobre Nosotros</ion-item> 
   </ion-content>
 </ion-menu>
 <div class="ion-page" id="main-content">
