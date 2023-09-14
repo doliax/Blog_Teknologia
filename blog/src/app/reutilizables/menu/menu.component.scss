@@ -6,6 +6,10 @@ ion-content {
     background-color: white;
 }
 
+ion-title h1 {
+  font-size: 70px;
+}
+
 a {
     /*Con esto le quitamos la linea de abajo*/
     text-decoration: none;
@@ -13,8 +17,14 @@ a {
 
   .logo_principal {
     height: 50px;
-    margin-top: 50px;
-    margin-left: 150px;
+    float:inline-start;
+  }
+
+/*Cuando llege a los 500px el texto se hace más pequeño, adaptandose a mobile*/
+  @media (max-width: 500px) {
+    ion-title h1 {
+      font-size: 20px;
+    }
   }
 
   
