@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>opiniones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+      <ion-title size="large">opiniones</ion-title>
+      <form action="">
+        <ion-label>Email</ion-label>
+        <!--Asociamos cada input con el elemento correspondiente del formulario | Tambien con un name parecido-->
+        <input [(ngModel)]="opinionForm.email" required type="text" name="email">
+        <br>
+        <ion-label>Puntuación</ion-label>
+        <input [(ngModel)]="opinionForm.puntuacion" required type="number" name="puntuacion">
+        <br>
+        <ion-label>Opinion</ion-label>
+        <input [(ngModel)]="opinionForm.descripcion" required type="text" name="descripcion">
+        <br>
+        <input type="button" (click)="onSubmit()" value="Crear opinión">
+      </form>
+ 
+</ion-content>

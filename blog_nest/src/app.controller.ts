@@ -1,6 +1,6 @@
 
 
-import { Body, Controller, Delete, Get, Param, Put, Res } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Posts } from './posts/posts'; // Importa el modelo correcto
 import { UpdatePostDto } from './dtos/update-post-dto/update-post-dto';
@@ -92,8 +92,8 @@ export class AppController {
   }
 
 
-  @Put('opinion')     //En este caso param es lo que ponemos en la ruta y body lo que ponemos en el raw json
-  async createOpinion(@Body() OpinionesDTO: OpinionesDTO, @Res() res): Promise<Opiniones> {
+  @Post('opinion')     //En este caso param es lo que ponemos en la ruta y body lo que ponemos en el raw json
+  async createOpinion(@Body() OpinionesDTO: Opiniones, @Res() res): Promise<Opiniones> {
     //Utilizo el metodo del service
     const opinion = await this.appService.createOpinion(OpinionesDTO);
 

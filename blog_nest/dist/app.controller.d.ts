@@ -2,7 +2,6 @@ import { AppService } from './app.service';
 import { Posts } from './posts/posts';
 import { UpdatePostDto } from './dtos/update-post-dto/update-post-dto';
 import { Opiniones } from './posts/opiniones';
-import { OpinionesDTO } from './dtos/update-post-dto/opiniones-dto';
 export declare class AppController {
     private readonly appService;
     constructor(appService: AppService);
@@ -16,5 +15,5 @@ export declare class AppController {
     deletePostById(id: string, res: any): Promise<Posts>;
     getOpiniones(): Promise<Opiniones[]>;
     deleteOpinion(id: string, res: any): Promise<Opiniones>;
-    createOpinion(OpinionesDTO: OpinionesDTO, res: any): Promise<Opiniones>;
+    createOpinion(opinion: Opiniones, res: any): Promise<Opiniones>;
 }

@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'categorias',
     loadChildren: () => import('./pages/categorias/categorias.module').then( m => m.CategoriasPageModule)
   },
+  {
+    path: 'opiniones',
+    loadChildren: () => import('./pages/opiniones/opiniones.module').then( m => m.OpinionesPageModule)
+  },
 ];
 
 @NgModule({

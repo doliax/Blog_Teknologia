@@ -102,7 +102,7 @@ async getPostByTitulo(titulo: string): Promise<Posts> {
   }
 
 
-  async createOpinion(opinionDTO : OpinionesDTO): Promise<Opiniones> {
+  async createOpinion(opinionDTO : Opiniones): Promise<Opiniones> {
 
     //Creamos un objeto de tipo opiniones, lo parseamos a json
     const create = JSON.parse(JSON.stringify(opinionDTO));

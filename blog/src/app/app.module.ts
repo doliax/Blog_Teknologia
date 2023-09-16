@@ -10,6 +10,7 @@ import { BackButtonModule } from './reutilizables/back-button/back-button.module
 import { MenuModule } from './reutilizables/menu/menu.module';
 import { HomePageModule } from './home/home.module';
 import { MenuMobileModule } from './reutilizables/menu-mobile/menu-mobile.module';
+import { OpinionesPageModule } from './pages/opiniones/opiniones.module';
 
 
 @NgModule({

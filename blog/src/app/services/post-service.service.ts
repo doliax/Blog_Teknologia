@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Opiniones } from '../classes/opiniones';
 
 @Injectable({
   providedIn: 'root'
@@ -15,4 +16,5 @@ export class PostServiceService {
     //Usamos el postId que se pasa como parámetro en la url
     return this.http.get(`http://127.0.0.1:3000/posts/${postId}`);
   }
+
 }

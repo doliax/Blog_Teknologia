@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { MenuModule } from '../reutilizables/menu/menu.module';
 import { MenuMobileModule } from "../reutilizables/menu-mobile/menu-mobile.module";
+import { OpinionesPageModule } from '../pages/opiniones/opiniones.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MenuMobileModule } from "../reutilizables/menu-mobile/menu-mobile.modul
         IonicModule,
         HomePageRoutingModule,
         MenuModule,
-        MenuMobileModule
+        MenuMobileModule,
+        OpinionesPageModule
     ]
 })
 export class HomePageModule {}
