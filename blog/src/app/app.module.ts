@@ -14,7 +14,7 @@ import { ReverseStringPipe } from './pipes/reverse-string.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, ReverseStringPipe,],                                     //Importamos el modulo de HttpClient para poder conectarnos al backend
+  declarations: [AppComponent,],                                     //Importamos el modulo de HttpClient para poder conectarnos al backend
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BackButtonModule, MenuModule, HomePageModule, MenuMobileModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent]
