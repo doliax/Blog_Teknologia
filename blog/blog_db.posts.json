@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "64f590eb4ecab1192f907d41"
+  },
+  "titulo": "El nuevo iPhone15 te sorprenderá",
+  "subtitulo": "Lo nuevo de la manzana",
+  "texto": "Finalmente han sacado un nuevo modelo del tan esperando movil",
+  "imagen": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-12-purple-2021?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1635202738000",
+  "creador": "Doliax",
+  "isNew": false,
+  "categoria": "hardware"
+},
+{
+  "_id": {
+    "$oid": "64f6db2d9c18c7a243fbb6f9"
+  },
+  "titulo": "Intel saca nuevas CPUS",
+  "subtitulo": "Prometen revolucionar el mercado",
+  "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  "imagen": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/06/procesador-intel-core-2383049.jpg?tf=3840x",
+  "creador": "Doliax",
+  "isNew": false,
+  "categoria": "graficas"
+},
+{
+  "_id": {
+    "$oid": "64f74799a7cbb65f1cafbf9a"
+  },
+  "titulo": "Nuevas GPUs de Nvidia",
+  "subtitulo": "Llegan las 5090",
+  "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  "creador": "Enrique",
+  "isNew": true,
+  "categoria": "graficas",
+  "imagen": "https://i.ytimg.com/vi/PgBFTYdm0MM/maxresdefault.jpg"
+},
+{
+  "_id": {
+    "$oid": "64f77654a7cbb65f1cafbf9b"
+  },
+  "titulo": "dato",
+  "categoria": "hardware",
+  "imagen": "https://play-lh.googleusercontent.com/V_P-I-UENK93ahkQgOWel8X8yFxjhOOfMAZjxXrqp311Gm_RBtlDXHLQhwFZN8n4aIQ",
+  "isNew": true
+}]

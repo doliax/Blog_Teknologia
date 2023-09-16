@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "650560fa988aac129d25c183"
+  },
+  "email": "test@test.com",
+  "puntuacion": 10,
+  "descripcion": "Todo ok"
+},
+{
+  "_id": {
+    "$oid": "650568ac9126196438157f9e"
+  },
+  "email": "test2@test.com",
+  "puntuacion": 20,
+  "descripcion": "todo correcto",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6505d2dee296efef12558324"
+  },
+  "email": "testPostman@test.com",
+  "puntuacion": 14,
+  "descripcion": "todo postman",
+  "__v": 0
+}]
