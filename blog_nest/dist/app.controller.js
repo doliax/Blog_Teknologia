@@ -16,6 +16,7 @@ exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const update_post_dto_1 = require("./dtos/update-post-dto/update-post-dto");
+const opiniones_dto_1 = require("./dtos/update-post-dto/opiniones-dto");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
@@ -55,6 +56,23 @@ let AppController = class AppController {
             res.status(200).json({ message: 'El post se borró exitosamente' });
         }
         return post;
+    }
+    async getOpiniones() {
+        return this.appService.getOpiniones();
+    }
+    async deleteOpinion(id, res) {
+        const opinion = await this.appService.deleteOpinionById(id);
+        if (opinion) {
+            res.status(200).json({ message: 'La opinión se borró exitosamente' });
+        }
+        return opinion;
+    }
+    async createOpinion(OpinionesDTO, res) {
+        const opinion = await this.appService.createOpinion(OpinionesDTO);
+        if (opinion) {
+            res.status(200).json({ message: 'La opinión se creó exitosamente' });
+        }
+        return opinion;
     }
 };
 exports.AppController = AppController;
@@ -115,6 +133,28 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "deletePostById", null);
+__decorate([
+    (0, common_1.Get)('opiniones'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getOpiniones", null);
+__decorate([
+    (0, common_1.Delete)('opinion/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "deleteOpinion", null);
+__decorate([
+    (0, common_1.Put)('opinion'),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [opiniones_dto_1.OpinionesDTO, Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "createOpinion", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

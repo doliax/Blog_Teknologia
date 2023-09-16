@@ -3,6 +3,8 @@ import { InjectModel } from '@nestjs/mongoose'; // Importa InjectModel
 import { Model } from 'mongoose'; // Importa el tipo Model
 import { Posts } from './posts/posts';
 import { UpdatePostDto } from './dtos/update-post-dto/update-post-dto';
+import { Opiniones } from './posts/opiniones';
+import { OpinionesDTO } from './dtos/update-post-dto/opiniones-dto';
 
 
 
@@ -12,7 +14,10 @@ export class AppService {
   constructor(
       @InjectModel(Posts.name) 
                                   //Este Model con el generic Type de Posts viene de mongoose
-      private readonly postsModel: Model<Posts>
+      private readonly postsModel: Model<Posts>,
+
+      @InjectModel(Opiniones.name)
+      private readonly opinionesModel: Model<Opiniones>
     ) {}
 
   getHello(): string {
@@ -80,4 +85,32 @@ async getPostByTitulo(titulo: string): Promise<Posts> {
 
     return updatedPost;
   }
+
+
+
+  //APARTADO OPINIONES
+
+  async getOpiniones() :Promise<Opiniones[]>{
+    const opiniones = await this.opinionesModel.find().exec();
+    return opiniones;
+  }
+
+  async deleteOpinionById(id: string): Promise<Opiniones> {
+    const filter = { _id: id};
+    const deleteOpinion = await this.opinionesModel.findOneAndDelete(filter);
+    return deleteOpinion;
+  }
+
+
+  async createOpinion(opinionDTO : OpinionesDTO): Promise<Opiniones> {
+
+    //Creamos un objeto de tipo opiniones, lo parseamos a json
+    const create = JSON.parse(JSON.stringify(opinionDTO));
+
+    const createOpinion = await this.opinionesModel.create(create);
+
+    return createOpinion;
+  }
+
+
 }

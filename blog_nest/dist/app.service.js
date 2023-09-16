@@ -17,9 +17,11 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const posts_1 = require("./posts/posts");
+const opiniones_1 = require("./posts/opiniones");
 let AppService = class AppService {
-    constructor(postsModel) {
+    constructor(postsModel, opinionesModel) {
         this.postsModel = postsModel;
+        this.opinionesModel = opinionesModel;
     }
     getHello() {
         return 'Hello World!';
@@ -62,11 +64,27 @@ let AppService = class AppService {
         const updatedPost = await this.postsModel.findByIdAndDelete(filter);
         return updatedPost;
     }
+    async getOpiniones() {
+        const opiniones = await this.opinionesModel.find().exec();
+        return opiniones;
+    }
+    async deleteOpinionById(id) {
+        const filter = { _id: id };
+        const deleteOpinion = await this.opinionesModel.findOneAndDelete(filter);
+        return deleteOpinion;
+    }
+    async createOpinion(opinionDTO) {
+        const create = JSON.parse(JSON.stringify(opinionDTO));
+        const createOpinion = await this.opinionesModel.create(create);
+        return createOpinion;
+    }
 };
 exports.AppService = AppService;
 exports.AppService = AppService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(posts_1.Posts.name)),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    __param(1, (0, mongoose_1.InjectModel)(opiniones_1.Opiniones.name)),
+    __metadata("design:paramtypes", [mongoose_2.Model,
+        mongoose_2.Model])
 ], AppService);
 //# sourceMappingURL=app.service.js.map

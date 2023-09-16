@@ -4,6 +4,8 @@ import { Body, Controller, Delete, Get, Param, Put, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Posts } from './posts/posts'; // Importa el modelo correcto
 import { UpdatePostDto } from './dtos/update-post-dto/update-post-dto';
+import { Opiniones } from './posts/opiniones';
+import { OpinionesDTO } from './dtos/update-post-dto/opiniones-dto';
 
 @Controller()
 export class AppController {
@@ -72,4 +74,33 @@ export class AppController {
 
   }
 
+
+  //Apartado opiniones
+  @Get('opiniones')
+  async getOpiniones(): Promise<Opiniones[]> {
+    return this.appService.getOpiniones();
+  }
+
+  @Delete('opinion/:id')
+  async deleteOpinion(@Param('id') id: string, @Res() res): Promise<Opiniones> {
+    const opinion = await this.appService.deleteOpinionById(id);
+     
+    if(opinion){
+      res.status(200).json({ message: 'La opinión se borró exitosamente' });
+    }
+    return opinion
+  }
+
+
+  @Put('opinion')     //En este caso param es lo que ponemos en la ruta y body lo que ponemos en el raw json
+  async createOpinion(@Body() OpinionesDTO: OpinionesDTO, @Res() res): Promise<Opiniones> {
+    //Utilizo el metodo del service
+    const opinion = await this.appService.createOpinion(OpinionesDTO);
+
+    if(opinion){
+      res.status(200).json({ message: 'La opinión se creó exitosamente' });
+    }
+
+    return opinion;
+  }
 }
