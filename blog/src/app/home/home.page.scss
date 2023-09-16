@@ -46,6 +46,20 @@ a{
 .posts {
   width: 250px;
   height: 270px;
+  animation: mostrar 2s normal;
+  opacity: 1;
+}
+
+@keyframes mostrar {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 footer{

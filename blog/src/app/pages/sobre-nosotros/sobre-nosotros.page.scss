@@ -13,3 +13,18 @@ ion-content{
 .sec_page {
     margin-top: 50px;
 }
+
+.datos{
+    animation: aparecer 2s normal;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}

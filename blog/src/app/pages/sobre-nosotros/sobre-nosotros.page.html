@@ -3,13 +3,37 @@
 <ion-content class="contenido_principal" [fullscreen]="true">
   <app-back-button></app-back-button>
   <ion-title>¿Quienes somos?</ion-title>
+
   <ion-text>Somos un grupo de aficionados a la tecnologia dentro del ambito de:</ion-text>
   <br>
+  <!--
+  
   <ion-chip id="prog" color="secondary">Programación</ion-chip><ion-chip id="rob" color="tertiary">Robotica</ion-chip>
   <section id="languagesList"></section>
-  <section id="roboticaList"></section>
+  <section id="roboticaList"></section>-->
 
-  <section class="sec_page">También somos la página más visitada en tecnología.</section>
+  <ion-chip color="secondary" id="click-trigger">Programación</ion-chip>
+  <ion-popover trigger="click-trigger" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding" *ngFor="let lan of languages">{{lan}}</ion-content>
+    </ng-template>
+  </ion-popover>
+
+  <ion-chip color="tertiary" id="click-trigger-2">Robotica</ion-chip>
+  <ion-popover trigger="click-trigger-2" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding" *ngFor="let robot of robotica">{{robot}}</ion-content>
+    </ng-template>
+  </ion-popover>
+
+  <section class="sec_page">
+    <ion-title>También somos la página más visitada en tecnología.</ion-title>
+    <p class="datos">Según estimaciones propias el trafico diario fue de 2.5 millones de conexiones!</p>
+    <img class="datos" style="height: 250px;" src="../../../assets/grafico.png" alt="">
+
+    <ion-title>Con un promedio de usuarios activos de 1 millon</ion-title>
+</section>
+
 
   <app-menu-mobile></app-menu-mobile>
  

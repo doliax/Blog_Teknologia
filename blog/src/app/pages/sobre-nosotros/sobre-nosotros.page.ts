@@ -10,15 +10,18 @@ export class SobreNosotrosPage implements OnInit {
 
    languages: string[] = ['Python', 'JavaScript', 'TypeScript'];
    robotica: string[] = ['PLC', 'Maquinaria Industrial'];
-
+   
+   
   ngOnInit() {
 
+    /*
     this.crearLen();
-    this.crearRobot();
+    this.crearRobot();*/
   
 
   }
 
+  /* Con el ion-popover esto ya no es necesario
   crearLen(){
     //Dos ids asignados
   const chip_prog = document.getElementById('prog');
@@ -31,7 +34,7 @@ export class SobreNosotrosPage implements OnInit {
   
   
    chip_prog.addEventListener('click', () => {
-   
+  
      //Clear
      div_languages.innerHTML = '';
 
@@ -49,6 +52,9 @@ export class SobreNosotrosPage implements OnInit {
      //Una vez tenga todos en el ol lo añado al div que tengo
      div_languages.appendChild(ol);
 
+     chip_prog.addEventListener('click', () => {
+        this.languages = [];
+     })
 
    });
  };
@@ -81,7 +87,7 @@ export class SobreNosotrosPage implements OnInit {
         
       });
     }
-  }
+  }*/
 
 }
 
