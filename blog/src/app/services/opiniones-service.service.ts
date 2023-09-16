@@ -29,8 +29,19 @@ export class OpinionesService {
 
     //TODO Mirar porque coge los datos pero nunca llegan a la bd
   addOpinion(opinion:Opiniones): Observable<any> {
-    const body=JSON.stringify(opinion);
+
+    //ESTO NO FUNCIONA PORQUE TENEMOS QUE PASARLE LOS DATOS COMO OBJETO O NO RECOGE LOS DATOS SIMPLEMENTE
+    /*const body = JSON.stringify(opinion);
     console.log(body)
+    return this.http.post('http://127.0.0.1:3000/opinion', body)*/
+
+    //Esto si que funciona porque recoge los datos
+    const body = {
+      'email': opinion.email,
+      'puntuacion': opinion.puntuacion,
+      'descripcion': opinion.descripcion
+    }
+
     return this.http.post('http://127.0.0.1:3000/opinion', body)
   }
 }

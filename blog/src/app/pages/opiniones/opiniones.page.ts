@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Opiniones } from 'src/app/classes/opiniones';
 import { OpinionesService } from 'src/app/services/opiniones-service.service';
@@ -19,7 +20,7 @@ export class OpinionesPage implements OnInit {
   };
   
               //Importamos el servicio desde el contructor
-  constructor(private readonly opinionesService: OpinionesService) {}
+  constructor(private readonly opinionesService: OpinionesService, private http: HttpClient) {}
 
   ngOnInit() {
     
@@ -37,6 +38,17 @@ export class OpinionesPage implements OnInit {
   
     //Actualizamos el valor de opinionForm con los datos del formulario
     this.opinionForm = opinion;
+
+    /* ESTO FUNCIONA | Pero la gracia es hacerlo desde el service
+    this.http.post('http://127.0.0.1:3000/opinion',
+    {
+    "email" : this.opinionForm.email,
+    "puntuacion": this.opinionForm.puntuacion,
+    "descripcion": this.opinionForm.descripcion,
+    },
+    ).subscribe((data: any) => {
+      console.log(data)
+    });*/
  
     //Llamamos al service y nos suscribimos al post pasndole los datos del formulario
     this.opinionesService.addOpinion(opinion).subscribe(() => {
