@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OpinionesPageRoutingModule } from './opiniones-routing.module';
 
 import { OpinionesPage } from './opiniones.page';
+import { ReverseStringPipe } from 'src/app/pipes/reverse-string.pipe';
 
 @NgModule({
   imports: [

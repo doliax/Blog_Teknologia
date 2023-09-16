@@ -11,6 +11,7 @@ import { BackButtonComponent } from 'src/app/reutilizables/back-button/back-butt
 import { BackButtonModule } from 'src/app/reutilizables/back-button/back-button.module';
 import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
 import { MenuMobileModule } from 'src/app/reutilizables/menu-mobile/menu-mobile.module';
+import { ReverseStringPipe } from 'src/app/pipes/reverse-string.pipe';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { MenuMobileModule } from 'src/app/reutilizables/menu-mobile/menu-mobile.
     MenuMobileModule
     
   ],
-  declarations: [PostPage],
+  declarations: [PostPage, ReverseStringPipe],
   exports: []
 })
 export class PostPageModule {}

@@ -2,7 +2,6 @@ import { Model } from 'mongoose';
 import { Posts } from './posts/posts';
 import { UpdatePostDto } from './dtos/update-post-dto/update-post-dto';
 import { Opiniones } from './posts/opiniones';
-import { OpinionesDTO } from './dtos/update-post-dto/opiniones-dto';
 export declare class AppService {
     private readonly postsModel;
     private readonly opinionesModel;
@@ -17,5 +16,5 @@ export declare class AppService {
     deletePostById(id: string): Promise<Posts>;
     getOpiniones(): Promise<Opiniones[]>;
     deleteOpinionById(id: string): Promise<Opiniones>;
-    createOpinion(opinionDTO: OpinionesDTO): Promise<Opiniones>;
+    createOpinion(opinionDTO: Opiniones): Promise<Opiniones>;
 }

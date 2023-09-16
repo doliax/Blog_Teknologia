@@ -15,5 +15,5 @@ export declare class AppController {
     deletePostById(id: string, res: any): Promise<Posts>;
     getOpiniones(): Promise<Opiniones[]>;
     deleteOpinion(id: string, res: any): Promise<Opiniones>;
-    createOpinion(opinion: Opiniones, res: any): Promise<Opiniones>;
+    createOpinion(OpinionesDTO: Opiniones, res: any): Promise<Opiniones>;
 }

@@ -67,8 +67,8 @@ let AppController = class AppController {
         }
         return opinion;
     }
-    async createOpinion(opinion, res) {
-        opinion = await this.appService.createOpinion(opinion);
+    async createOpinion(OpinionesDTO, res) {
+        const opinion = await this.appService.createOpinion(OpinionesDTO);
         if (opinion) {
             res.status(200).json({ message: 'La opinión se creó exitosamente' });
         }

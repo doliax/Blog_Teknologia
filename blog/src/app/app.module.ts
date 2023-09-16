@@ -10,12 +10,12 @@ import { BackButtonModule } from './reutilizables/back-button/back-button.module
 import { MenuModule } from './reutilizables/menu/menu.module';
 import { HomePageModule } from './home/home.module';
 import { MenuMobileModule } from './reutilizables/menu-mobile/menu-mobile.module';
-import { OpinionesPageModule } from './pages/opiniones/opiniones.module';
+import { ReverseStringPipe } from './pipes/reverse-string.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent, ],                                     //Importamos el modulo de HttpClient para poder conectarnos al backend
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BackButtonModule, MenuModule, HomePageModule, MenuMobileModule],
+  declarations: [AppComponent, ReverseStringPipe,],                                     //Importamos el modulo de HttpClient para poder conectarnos al backend
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BackButtonModule, MenuModule, HomePageModule, MenuMobileModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent]
 })
