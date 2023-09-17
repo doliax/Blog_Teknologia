@@ -1,0 +1,49 @@
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 150px;
+  }
+  
+  .form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px; 
+  }
+  
+  .form ion-label {
+    text-align: left; 
+  }
+  
+  .form ion-label,
+  .form input {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .btn_enviar {
+    width: auto;
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn_enviar:hover {
+    background-color: #0056b3; 
+  }
+
+  /*ion-input{
+    background-color: grey;
+  }*/
+  
