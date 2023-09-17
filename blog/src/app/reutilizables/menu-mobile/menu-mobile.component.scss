@@ -11,3 +11,14 @@
       display: none;
     }
   }
+
+  ion-button{
+    font-size: small;
+  }
+
+
+  @media (max-width: 411px) {
+    ion-button{
+      font-size: 10px;
+    }
+  }
