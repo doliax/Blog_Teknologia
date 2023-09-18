@@ -25,22 +25,25 @@
     </form>  -->
 
     <!--Form Reactivo-->
+    <div style="margin: 0 auto; text-align: center; padding-top: 50px;" *ngIf="opForm.get('puntuacion')?.hasError('max')">Puntuación máxima de 10</div>
     <form [formGroup]="opForm" class="form">
       <ion-title size="large">Opiniones</ion-title>
       <!-- Elimina el formulario interno que no es necesario -->
       <!-- Asocia cada input con el elemento correspondiente del formulario utilizando formControlName -->
       <ion-input labelPlacement="floating" formControlName="email" required type="text" name="email" placeholder="Escribe tu email">
         <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
+        <!--Gracias a los validators ahora podemos comprobar que si se excede del limite saca error-->
       </ion-input>
       <br>
       <ion-input labelPlacement="floating" formControlName="puntuacion" required type="number" name="puntuacion">
         <div slot="label">Puntuación <ion-text color="danger">(Required)</ion-text></div>
+      
       </ion-input>
       <br>
       <ion-input labelPlacement="floating" formControlName="descripcion" required type="text" name="descripcion" placeholder="Escribe una descripción">
         <div slot="label">Opinion <ion-text color="danger">(Required)</ion-text></div>
       </ion-input>
-      <input class="btn_enviar" type="button" (click)="onSubmit2()" value="Crear opinión">
+      <input class="btn_enviar" type="button" [disabled]="opForm.get('puntuacion')?.hasError('required') || opForm.get('email')?.hasError('required') || opForm.get('descripcion')?.hasError('required') " (click)="onSubmit2()" value="Crear opinión">
     </form>
     
 
