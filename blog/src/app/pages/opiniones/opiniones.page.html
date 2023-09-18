@@ -5,10 +5,10 @@
 </ion-header>
 <app-menu></app-menu>
 <ion-content [fullscreen]="true">
-    <div class="form">
+    <!-- <form class="form">
       <ion-title size="large">Opiniones</ion-title>
       <form action="">
-        <!--Asociamos cada input con el elemento correspondiente del formulario | Tambien con un name parecido-->
+        //Asociamos cada input con el elemento correspondiente del formulario | Tambien con un name parecido
         <ion-input labelPlacement="floating"  [(ngModel)]="opinionForm.email" required type="text" name="email" placeholder="Escribe tu email" >
           <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
         </ion-input>
@@ -22,11 +22,31 @@
         </ion-input>
         <input class="btn_enviar" type="button" (click)="onSubmit()" value="Crear opinión">
       </form>
-    </div>
+    </form>  -->
+
+    <!--Form Reactivo-->
+    <form [formGroup]="opForm" class="form">
+      <ion-title size="large">Opiniones</ion-title>
+      <!-- Elimina el formulario interno que no es necesario -->
+      <!-- Asocia cada input con el elemento correspondiente del formulario utilizando formControlName -->
+      <ion-input labelPlacement="floating" formControlName="email" required type="text" name="email" placeholder="Escribe tu email">
+        <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
+      <br>
+      <ion-input labelPlacement="floating" formControlName="puntuacion" required type="number" name="puntuacion">
+        <div slot="label">Puntuación <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
+      <br>
+      <ion-input labelPlacement="floating" formControlName="descripcion" required type="text" name="descripcion" placeholder="Escribe una descripción">
+        <div slot="label">Opinion <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
+      <input class="btn_enviar" type="button" (click)="onSubmit2()" value="Crear opinión">
+    </form>
+    
 
     <ion-toast
       [isOpen]="isToast"
-      message="Opinión creada correctamente"
+      message="Opinión enviada correctamente"
       [duration]="5000"
       position="middle"
     ></ion-toast>

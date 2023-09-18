@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -20,7 +20,8 @@ import { MenuModule } from 'src/app/reutilizables/menu/menu.module';
     OpinionesPageRoutingModule,
     BackButtonModule,
     MenuMobileModule,
-    MenuModule
+    MenuModule,
+    ReactiveFormsModule //Importamos el formularioReactivo para utilizarlo
   ],
   declarations: [OpinionesPage]
 })

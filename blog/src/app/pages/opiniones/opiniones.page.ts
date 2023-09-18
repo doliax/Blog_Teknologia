@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 
 import { Opiniones } from 'src/app/classes/opiniones';
@@ -16,14 +16,17 @@ export class OpinionesPage implements OnInit {
 
   isToast : boolean = false
 
+
+  public opForm: FormGroup;
+
   //Creamos un objeto de opiniones vacio
-  opinionForm: Opiniones = {
+  /*opinionForm: Opiniones = {
     _id: '',
     email: '',
     puntuacion: 0,
     descripcion: '',
     
-  };
+  };*/
 
   
   
@@ -31,7 +34,15 @@ export class OpinionesPage implements OnInit {
   constructor(private readonly opinionesService: OpinionesService, 
                 private http: HttpClient, 
                 private formBuilder: FormBuilder, 
-                public toastController: ToastController ) {}  //El ToastController para manejar su activación
+                public toastController: ToastController, ) {
+                 
+
+                  this.opForm = this.formBuilder.group({
+                    email: ['', [Validators.required, Validators.email]],
+                    puntuacion: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
+                    descripcion: ['', Validators.required]
+                  });
+                }  //El ToastController para manejar su activación
 
                 
 
@@ -42,7 +53,7 @@ export class OpinionesPage implements OnInit {
   async presentToast() {
     //Función asincrona que espera al toast
     const toast = await this.toastController.create({
-      message: 'Opinión creada correctamente',
+      message: 'Opinión enviada correctamente',
       duration: 5000,
       position: 'middle',
     });
@@ -61,7 +72,9 @@ export class OpinionesPage implements OnInit {
     toast.present();
   }
 
-  onSubmit() {
+
+  //Esta función sirve para un form no reactivo, utilizando simplemente la clase opinion
+  /*onSubmit() {
     if (this.opinionForm.email && this.opinionForm.puntuacion && this.opinionForm.descripcion) {
     //Obtenemos los datos del formulario
     const opinion = {
@@ -74,16 +87,6 @@ export class OpinionesPage implements OnInit {
     //Actualizamos el valor de opinionForm con los datos del formulario
     this.opinionForm = opinion;
 
-    /* ESTO FUNCIONA | Pero la gracia es hacerlo desde el service
-    this.http.post('http://127.0.0.1:3000/opinion',
-    {
-    "email" : this.opinionForm.email,
-    "puntuacion": this.opinionForm.puntuacion,
-    "descripcion": this.opinionForm.descripcion,
-    },
-    ).subscribe((data: any) => {
-      console.log(data)
-    });*/
  
     //Llamamos al service y nos suscribimos al post pasndole los datos del formulario
     this.opinionesService.addOpinion(opinion).subscribe(() => {
@@ -101,7 +104,32 @@ export class OpinionesPage implements OnInit {
     } else{
       this.badToast();
     }
+}*/
 
 
+
+onSubmit2() {
+  //Verificamos si el formulario es válido antes de enviar los datos
+  if (this.opForm.valid) {
+    //Obtenemos los valores del formulario
+    const opinion = this.opForm.value;
+
+    //Llamamos al servicio para crear la opinión
+    this.opinionesService.addOpinion(opinion).subscribe(() => {
+      //Reiniciamos el formulario después de enviar los datos
+      this.opForm.reset({
+        email: '', 
+        puntuacion: 0,
+        descripcion: ''
+      });
+
+      //Una vez que se envían los datos, llamamos a la función para mostrar una notificación
+      this.presentToast();
+    });
+  } else {
+    //Si el formulario no es válido, muestra un mensaje de error
+    this.badToast();
+  }
 }
+
 }
