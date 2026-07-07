@@ -7,6 +7,7 @@ import { Opiniones } from 'src/app/classes/opiniones';
 import { OpinionesService } from 'src/app/services/opiniones-service.service';
 
 @Component({
+  standalone: false,
   selector: 'app-opiniones',
   templateUrl: './opiniones.page.html',
   styleUrls: ['./opiniones.page.scss'],

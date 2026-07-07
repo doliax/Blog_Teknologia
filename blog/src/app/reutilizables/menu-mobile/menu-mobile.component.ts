@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-menu-mobile',
   templateUrl: './menu-mobile.component.html',
   styleUrls: ['./menu-mobile.component.scss'],

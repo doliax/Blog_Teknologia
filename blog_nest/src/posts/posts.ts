@@ -1,29 +1,28 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 //Mapeamos el schema
 @Schema()
 export class Posts {
+  @Prop()
+  titulo: string;
 
-    @Prop()
-    titulo: string;
+  @Prop()
+  subtitulo: string;
 
-    @Prop()
-    subtitulo: string;
+  @Prop()
+  texto: string;
 
-    @Prop()
-    texto: string;
+  @Prop()
+  imagen: string;
 
-    @Prop()
-    imagen: string;
+  @Prop()
+  creador: string;
 
-    @Prop()
-    creador: string;
+  @Prop()
+  isNew: false;
 
-    @Prop()
-    isNew: false;
-
-    @Prop()
-    categoria: string;
+  @Prop()
+  categoria: string;
 }
 
 //Esto es nuestro schema real. Creamos una variable que sera el schema de nuestra clase | Esto se lo pasamos al import en app.module

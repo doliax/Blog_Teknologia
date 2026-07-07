@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 //Deciradir pipe donde le especificamos el nombre
 @Pipe({
+  standalone: false,
   name: 'reverseString'
 })
 export class ReverseStringPipe implements PipeTransform {

@@ -1,14 +1,16 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      // El componente se importa vía su módulo para que el compilador
+      // resuelva ion-app/ion-router-outlet (CUSTOM_ELEMENTS_SCHEMA ya no
+      // basta con la compilación AOT de los tests).
+      imports: [AppModule],
     }).compileComponents();
   });
 

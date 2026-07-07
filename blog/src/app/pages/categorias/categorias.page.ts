@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Posts } from 'src/app/classes/posts';
 
 @Component({
+  standalone: false,
   selector: 'app-categorias',
   templateUrl: './categorias.page.html',
   styleUrls: ['./categorias.page.scss'],
